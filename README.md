@@ -1,5 +1,6 @@
 # BOOLEAN_FUNCTION_MINIMIZATION
 
+
 **AIM:**
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
@@ -32,19 +33,35 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:**
+## Developed by: Karan A  RegisterNumber:212223230099
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+```
+module ex2(a,b,c,d,w,x,y,z,f1,f2);
+  input a,b,c,d,w,x,y,z;
+  output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+  not(adash,a);
+  not(bdash,b);
+  not(cdash,c);
+  not(ddash,d);
+  and(p,bdash,ddash);
+  and(q,adash,b,d);
+  and(r,a,b,cdash);
+  or(f1,p,q,r);
+//type code for f2 as like f1
+ not(ydash,y);
+ and(s,x,y);
+ and(t,ydash,z);
+ and(u,w,y);
+ or(f2,s,t,u);
+endmodule
+```
+**RTL realization output**
+![rtloutput](image.png)
 
-Developed by: RegisterNumber:*/
-
-
-**RTL realization**
-
-**Output:**
-
-**RTL**
 
 **Timing Diagram**
+![waveform](image-1.png)
 
 **Result:**
 
